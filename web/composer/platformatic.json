@@ -7,6 +7,9 @@
         "openapi": {
           "url": "/documentation/json",
           "prefix": "/db"
+        },
+        "proxy": {
+          "prefix": "/db"
         }
       },
       {

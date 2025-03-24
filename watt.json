@@ -9,5 +9,9 @@
   },
   "autoload": {
     "path": "web"
+  },
+  "basePath": "{PLT_BASE_PATH}",
+  "metrics": {
+    "port": 9091
   }
 }
