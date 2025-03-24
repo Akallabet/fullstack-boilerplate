@@ -1,8 +1,8 @@
 {
   "$schema": "https://schemas.platformatic.dev/@platformatic/db/2.53.1.json",
   "db": {
-    "connectionString": "{PLT_DB_DATABASE_URL}",
-    "graphql": true,
+    "connectionString": "{DATABASE_URL}",
+    "graphql": false,
     "openapi": true,
     "schemalock": true
   },

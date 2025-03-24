@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "wattpm dev",
+    "transpile": "npx platformatic compile",
     "build": "wattpm build",
     "start": "wattpm start"
   },
