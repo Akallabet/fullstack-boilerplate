@@ -1,0 +1,35 @@
+services:
+  postgresdb:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    # env_file: ./.env
+    environment:
+      - POSTGRES_USER=akallabeth
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - db_2:/usr/local/var/postgresql@17
+  app:
+    image: ace-plt:latest
+    depends_on:
+      - postgresdb
+    links:
+      - postgresdb
+    environment:
+      DATABASE_URL: postgresql://akallabeth:postgres@postgresdb:5432/postgres
+      # DATABASE_URL: postgresql://${DATABASE_USER}:${DATABASE_PASSWORD}@postgresdb:5432/${DATABASE_NAME}
+      PORT: 3042
+      PLT_SERVER_HOSTNAME: ${PLT_SERVER_HOSTNAME:-0.0.0.0}
+      PLT_TYPESCRIPT: true
+      PLT_SERVER_LOGGER_LEVEL: debug
+      PLT_DB_APPLY_MIGRATIONS: true
+      # PLT_KEYCLOAK_BASE_URL: ${PLT_KEYCLOAK_BASE_URL}
+      # PLT_KEYCLOAK_REALM: ${PLT_KEYCLOAK_REALM}
+      # PLT_KEYCLOAK_CLIENT_ID: ${PLT_KEYCLOAK_CLIENT_ID}
+      # PLT_KEYCLOAK_CLIENT_SECRET: ${PLT_KEYCLOAK_CLIENT_SECRET}
+    ports:
+      - 3042:3042
+volumes:
+  db_2:

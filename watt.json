@@ -1,11 +1,11 @@
 {
   "$schema": "https://schemas.platformatic.dev/wattpm/2.53.1.json",
   "server": {
-    "hostname": "0.0.0.0",  
+    "hostname": "{PLT_SERVER_HOSTNAME}",  
     "port": "{PORT}"
   },
   "logger": {
-    "level": "info"
+    "level": "debug"
   },
   "autoload": {
     "path": "web"

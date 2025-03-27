@@ -5,8 +5,7 @@
       {
         "id": "db",
         "openapi": {
-          "url": "/documentation/json",
-          "prefix": "/db"
+          "url": "/documentation/json"
         },
         "proxy": {
           "prefix": "/db"

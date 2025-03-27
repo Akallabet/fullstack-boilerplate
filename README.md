@@ -1,5 +1,11 @@
 # fullstack-boilerplate
 
+## Local development
+
+```
+docker build -t ace-plt .
+docker compose up
+```
 
 ## Deployment
 
