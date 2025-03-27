@@ -54,8 +54,8 @@ jobs:
       - name: Deploy to DigitalOcean
         uses: appleboy/ssh-action@master
         with:
-          # host: ${{ secrets.DROPLET_HOST }}
-          # username: ${{ secrets.DROPLET_USERNAME }}
+          host: ${{ secrets.DIGITALOCEAN_DROPLET_HOST }}
+          username: ${{ secrets.DIGITALOCEAN_DROPLET_USERNAME }}
           key: ${{ secrets.DIGITALOCEAN_DROPLET_SSH_KEY }}
           script: |
             # Login to GitHub Container Registry
